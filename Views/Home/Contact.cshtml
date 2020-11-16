@@ -1,0 +1,62 @@
+﻿@{
+    Layout="_MasterLayout";
+    ViewData["HeadTitle"]="Liên hệ PhuKienDienThoai.com";
+}
+@model PhuKienDienThoai.Models.ContactViewModels.ContactViewModel
+<div id="contact-page" class="container">
+    	<div class="bg">
+	    	<!-- <div class="row">    		
+	    		<div class="col-sm-12">    			   			
+					<h2 class="title text-center"><span class="text-block">Bản đồ</span></h2>    			    				    				
+					<div id="gmap" class="contact-map"></div>
+				</div>			 		
+			</div>    	 -->
+    		<div class="row">  	
+	    		<div class="col-sm-8">
+	    			<div class="contact-form">
+	    				<h2 class="title text-center"><span class="text-block">Liên hệ</span></h2>
+	    				<div class="status alert alert-success" style="display: none"></div>
+				    	<form asp-action="Contact" id="main-contact-form" class="contact-form row" name="contact-form" method="post">
+				            <div class="form-group col-md-6">
+				                <input type="text" asp-for="Ten" class="form-control" placeholder="Họ tên">
+                                <span asp-validation-for="Ten" class="text-danger"></span>
+				            </div>
+				            <div class="form-group col-md-6">
+				                <input type="email" name="Email" class="form-control" placeholder="Email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+				            </div>
+				            <div class="form-group col-md-12">
+				                <input type="text" name="TieuDe" class="form-control" placeholder="Tiêu đề">
+                                <span asp-validation-for="TieuDe" class="text-danger"></span>
+				            </div>
+				            <div class="form-group col-md-12">
+				                <textarea name="NoiDung" id="message" class="form-control" placeholder="Your Message Here"></textarea>
+                                <span asp-validation-for="NoiDung" class="text-danger"></span>
+				            </div>                        
+				            <div class="form-group col-md-12">
+				                <input type="submit" class="btn btn-primary pull-right" value="Gửi">
+				            </div>
+                            @* <div asp-validation-summary="All" class="text-danger"></div> -->*@
+				        </form>
+	    			</div>
+	    		</div>
+	    		<div class="col-sm-4">
+                    <div class="contact-info">
+                        <h2 class="title text-center"><span class="text-block">Thông tin liên hệ</span></h2>
+                        <address>
+                            <p>Phụ Kiện Điện Thoại</p>
+                            <p>280 An Dương Vương, Phường 4, Quận 5, TP. HCM</p>
+                            <p>Hồ Chí Minh, Việt Nam</p>
+                            <p>Điện thoại: (84-8) 3835.2020</p>
+                            <p>Email: hoangquy.12121999@gmail.com</p>
+                        </address>
+                        <!--G map-->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6535909873046!2d106.6795440029727!3d10.761158198021452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b888ab357%3A0xc469f6e800231314!2zMjgwIEFuIEQuIFbGsMahbmcsIFBoxrDhu51uZyA0LCBRdeG6rW4gNSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1603290596973!5m2!1svi!2s" width="400" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <!--end map-->
+                    </div>
+    			</div>    			
+	    	</div>  
+    	</div>	
+    </div><!--/#contact-page-->
+
+

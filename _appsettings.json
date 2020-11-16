@@ -1,0 +1,11 @@
+{
+	"ConnectionStrings": {
+		"DefaultConnection": "Data Source=DESKTOP-U8QPAUF;Initial Catalog=PhuKienDienThoai;Integrated Security=True"
+	},
+	"Logging": {
+		"IncludeScopes": false,
+		"LogLevel": {
+			"Default": "Warning"
+		}
+	}
+}

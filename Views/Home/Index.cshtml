@@ -1,0 +1,55 @@
+﻿@*using PhuKienDienThoai.Models*@
+@*model List<SanPham>*@
+@using X.PagedList.Mvc.Core
+@using X.PagedList
+@using PhuKienDienThoai.Controllers
+@*@using X.PagedList;*@
+@{
+    ViewData["HeadTitle"] = "PhuKienDienThoai.com - Phụ Kiện Điện Thoại Chính Hãng";
+    ViewData["Title"] = "Phụ kiện vừa cập nhật";
+}
+
+<div class="features_items">
+    <!--features_items-->
+    <h2 class="title text-center"><span class="text-block">@ViewData["Title"]</span></h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="~/images/sanpham/@item.HinhAnh" style="height: 100%; width:auto; max-height:130px" alt="" />
+                            <h2>@((item.DonGia * (100 - item.PhanTramGiamGia) / 100).ToString("#,0"))Đ</h2>
+                            <p title="@item.TenSanPham">@item.TenSanPham</p>
+                        </div>
+                    </div>
+                    <div class="choose">
+                        <ul class="nav nav-pills nav-justified">
+                            <li><a asp-controller="Wishlist" asp-area="Users" asp-action="ThemVaoWishList" data-id="@item.id" class="ThemVaoWishList"><i class="fa fa-plus-square"></i>Thêm vào wishlist</a></li>
+                            <li><a asp-controller="SanPham" asp-action="Index" asp-route-id="@item.id" asp-route-TenSanPham="@(SlugController.GenerateSlug(item.TenSanPham))"><i class="fa fa-info"></i>Chi tiết sản phẩm</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div><!--features_items-->
+@*Html.PagedListPager( myList, page => Url.Action("Index", new { page = page}) )
+<div class="text-right">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+</div>
+@if (TempData["Message"] != null)
+{
+    <script>
+        alert("@Html.Raw(TempData["Message"])");
+    </script>
+}
+ Load*@ Facebook SDK for JavaScript 
+
+<!-- Subiz Chat -->
+<script>
+    !function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acquvjwjhkptjlwpammb");
+</script>
+
+

@@ -1,0 +1,24 @@
+@model ApplicationUser
+    <link rel="stylesheet" href="https://cdn.baokim.vn/public/uploads/checkout/baokim.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.baokim.vn/public/uploads/checkout/baokim.js"></script>
+    <form asp-action="ThanhToanHoaDon" asp-controller="GioHang" method="post">
+        <div class="form-group">
+            <label for="frmThanhToan_diaChi">Địa chỉ</label>
+            <input type="text" id="frmThanhToan_diaChi" class="form-control" name="DiaChi" value="@Model.DiaChi">
+        </div>
+        <div class="form-group">
+            <label for="frmThanhToan_ghiChu">Ghi chú</label>
+            <textarea name="GhiChu" id="frmThanhToan_ghiChu" cols="30" rows="4" maxlength="500"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="frmThanhToan_phuongThuc">Chọn phương thức thanh toán</label><br />
+            <button class="btn btn-default check_out" type="submit">Thanh toán trực tiếp</button><br /><br />
+            <div id="paypal-button"></div><br />
+            <div id="btnbaokim">Thanh toán bảo kim</div><br />
+        </div>
+        <hr />
+
+    </form>
+    <div id="check_out"></div>
+    <a class="btn btn-default update" asp-action="index" asp-controller="Home">Tiếp tục mua hàng</a>
